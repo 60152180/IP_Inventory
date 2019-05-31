@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ip_inventory</string>
+
+    <string name="default_notification_channel_id">Channel ID</string>
+
+    <string name="default_notification_channel_name" translatable="true">Test</string>
 </resources>
