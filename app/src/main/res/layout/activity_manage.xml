@@ -5,36 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".manage">
+
     <ImageView
         android:id="@+id/iv_result"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="재고입력"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_capture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="206dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
+        android:layout_width="169dp"
+        android:layout_height="88dp"
+        android:layout_marginTop="124dp"
+        android:background="@color/colorPrimary"
         android:text="카메라로 찍기"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/btn_load"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_load"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
+        android:layout_width="172dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/colorPrimary"
         android:text="사진 불러오기"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_capture" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:onClick="onClick"
+        android:text="파일 업로드"
+        app:layout_constraintTop_toBottomOf="@+id/btn_load"
+        tools:layout_editor_absoluteX="16dp" />
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         button3.setOnClickListener(
                 new Button.OnClickListener(){
                     public void onClick(View view){
-                        Intent intent=new Intent(getApplicationContext(),sales_volume.class);
+                        Intent intent=new Intent(getApplicationContext(),ViewActivity.class);
                         startActivity(intent);
                     }
                 }
@@ -67,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(InstanceIdResult instanceIdResult) {
                 String deviceToken = instanceIdResult.getToken();
                 Log.e("Token",deviceToken);
+                HashMap<String, String> requestedParams = new HashMap<>();
+                requestedParams.put("token", deviceToken);
+                PostRequestHandler postRequestHandler = new PostRequestHandler("http://54.180.116.239/register.php", requestedParams);
+                postRequestHandler.execute();
             }
         });
 

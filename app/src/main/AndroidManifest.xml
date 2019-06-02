@@ -11,9 +11,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".setting"></activity>
-        <activity android:name=".sales_volume" />
         <activity android:name=".state" />
         <activity android:name=".manage" />
+        <activity android:name=".UploadActivity" />
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".EditActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +31,17 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <provider
+            android:authorities="com.example.ip_inventory"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+
+        </provider>
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>
